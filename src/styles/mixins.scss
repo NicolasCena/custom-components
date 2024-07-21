@@ -1,0 +1,31 @@
+@mixin flex_center($direction: 'column') {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: $direction;
+}
+
+@mixin openSansBold($size: 12px, $height: null) {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: $size;
+
+  @if $height {
+    line-height: $height;
+  } @else {
+    line-height: $size + 6px;
+  }
+}
+
+@mixin openSansRegular($size: 12px, $height: null) {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  font-size: $size;
+
+  @if $height {
+    line-height: $height;
+  } @else {
+    line-height: $size + 6px;
+  }
+}

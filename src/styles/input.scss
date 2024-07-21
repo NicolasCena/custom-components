@@ -1,0 +1,45 @@
+.input-generic {
+  display: grid;
+  gap: 5px;
+
+  label {
+    text-transform: capitalize;
+    @include openSansBold(12);
+  }
+
+  input {
+    border: 1px solid rgba(var(--primary), 0.5);
+    border-radius: 4px;
+    height: 14px;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    background-color: var(--white);
+
+    &:focus {
+        border: 1px solid rgba(var(--primary), .3);
+    }
+  }
+
+  span {
+  }
+
+  &.input-error {
+
+    input {
+        background-color: rgba(var(--error), .3);
+        border: 1px solid rgba(var(--error), 1);
+
+        &:focus {
+        }
+    }
+
+    span {
+    }
+  }
+
+  &.input-custom {
+    input {
+    }
+  }
+}

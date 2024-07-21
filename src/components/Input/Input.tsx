@@ -3,21 +3,21 @@ import { Props } from "./Props.type";
 import classNames from "classnames";
 
 const Input = ({
-  type,
+  type = 'text',
   messageError,
   hasError = false,
   handleOnFocus,
   handleOnBlur,
   handleOnChange,
-  label,
+  label = '',
   maxSize,
-  name,
+  name = '',
   classDiv,
 }: Props) => {
 
-    const containerClass = classNames("input-generic", classDiv, {
-        "input-error": hasError,
-    })
+  const containerClass = classNames("input-generic", classDiv, {
+    "input-error": hasError,
+  });
 
   return (
     <div className={containerClass}>
@@ -30,9 +30,7 @@ const Input = ({
         onFocus={handleOnFocus}
         maxLength={maxSize}
       />
-      {
-        hasError && <span>{messageError}</span>
-      }
+      {hasError && <span>{messageError}</span>}
     </div>
   );
 };
